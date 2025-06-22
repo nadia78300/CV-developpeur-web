@@ -1,0 +1,308 @@
+@import url('https://fonts.google.com/specimen/Raleway'); 
+@import url('https://fonts.google.com/specimen/Lato');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+body,html {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+}
+
+/*container qui contient toute les parties du CV*/
+.container{
+    display: flex;
+    flex-direction: column;
+    max-width: 1160px;
+    border: 1px solid #ccc;
+}
+
+/*Entête de CV*/
+.entete {
+    display:flex;   
+    text-align: center; /* Centre le texte horizontalement */
+    background-color: rgb(23,171,179);
+    height: 210px;
+    width: 100%;
+    color: white;
+    
+}
+
+/*Photo de profil: ronde,zoom*/
+.entete #image1 {    
+    margin-left: 120px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.link {
+    display: inline-block;
+    overflow: hidden;
+    cursor: zoom-in; /* 🔍 indique qu'on peut zoomer */
+}
+
+.ronde{
+    width: 160px;       
+    height: 160px;      
+    object-fit: cover;  /* pour bien centrer l’image */
+    border-radius: 50%; /* rend la photo ronde */
+    transition: transform 0.3s ease; /* animation fluide */
+    border: 5px solid white;
+}
+
+.link:hover .ronde {
+    transform: scale(1.0);     /* zoom à 100% */
+}
+
+/*Candidat: Nom, prénom, coordonnées*/
+.coordonnees{
+    justify-content: center;
+    margin-left: 300px;
+    width: 370px;
+}
+
+.coordonnees p{
+    display:inline-flex;
+    flex-wrap: wrap;
+    margin-right: 30px;
+    justify-content: center;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.coordonnees h1, h2{
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-family: 'Lato', sans-serif;
+}
+
+.appel {
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.mail {
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.adresse{
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.voiture{
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+/*Contenu de CV: profil, expérience, compétences, langues, stage...*/
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+.left, .right {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    min-width: 600px;
+  }
+
+.left {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    min-width: 350px;
+    background-color: rgb(227,227,227);
+}
+
+.right{
+    flex: 3;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+}
+
+.stars1, .stars2, .stars3{
+    margin-left: 30px;  
+    margin-right: 10px;
+    margin-bottom: 5px;
+    display:flex
+}
+
+.competence{
+    margin-right: 30px;
+    font-weight: bold ;
+    flex:1;
+}
+
+.stars1 .filled,  .stars2 .filled, .stars3 .filled {
+    color: rgb(23,171,179);
+}
+
+.stars1 i, .stars2 i, .stars3 i{
+    font-size: 10px;
+    margin-right: 4px;  
+    justify-content: right; 
+}
+
+.h3-bordered {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    color:  rgb(23,171,179);
+    font-family: 'Lato', sans-serif;
+}
+
+table{
+    margin-left: 30px;
+    width: 90%;
+}
+
+.langue{
+    font-weight: bold;
+}
+
+.niveau{
+    text-align: right;
+    margin-left: 30px;
+}
+
+.profil p{
+    margin-left: 30px;
+    text-align: justify;
+    text-indent: 2em;   
+}
+
+.diplome {
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.stages{
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.experiences{
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.ligne-haut {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.titre {
+  flex: 1;
+}
+
+.annee {
+    text-align: right;
+    white-space: nowrap;
+    color: rgb(23,171,179);
+}
+
+.sous-titre {
+    margin-left: 0;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #555;  
+}
+
+.list{
+    list-style-type: square;
+    color: black; /* texte noir */
+}
+
+.list li::marker{
+    color:rgb(23,171,179); 
+}
+
+article{
+    margin-bottom: 40px;
+}
+
+/* Style de chaque expérience */
+.item {
+    position: relative;
+    background-color: white;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+/* Trait vertical à gauche */
+.item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: rgb(23,171,179); 
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 2px;
+  }
+
+/* Survol */
+.item:hover {
+    background-color: rgb(227,227,227); 
+}
+
+.item:hover::before {
+    opacity: 1;
+}
+
+/*Le footer ou pied de page*/
+footer{
+    background-color:rgb(23,171,179); 
+    text-align: center;
+    color: #fff;
+    font-size: small ;
+    font-style: italic;
+    height:60px;
+    padding-top: 10px;
+}
+
+.social-icons a {
+    color: white; 
+    font-size: 12px;
+    margin: 0 15px;
+    transition: opacity 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    justify-items: center;
+}
+
+.social-icons a:hover {
+    opacity: 0.7;
+}
+
+footer p{
+    margin-top:5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
